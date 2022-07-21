@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>New Gradle Users :: Clojurephant</title>
+    <link rel="canonical" href="https://clojurephant.dev/clojurephant/antora/new-gradle.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://clojurephant.dev">Clojurephant</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" >
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="index.html">clojurephant</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="clojurephant" data-version="antora">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">clojurephant</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">User Guide</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="new-gradle.html">New Gradle Users</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="new-clojure.html">New Clojure Users</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-lein.html">Migrating a build from Leiningen</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-boot.html">Migrating a build from Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-deps.html">Migrating a build from deps.edn</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="faq.html">Frequently Asked Questions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">clojurephant</span>
+    <span class="version">antora</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">clojurephant</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">antora</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">clojurephant</a></li>
+    <li><a href="new-gradle.html">New Gradle Users</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/clojurephant/clojurephant/edit/antora/docs/modules/ROOT/pages/new-gradle.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">New Gradle Users</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This example assumes Gradle 6 or higher.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle</a> is a build automation tool in the same space as <a href="https://maven.apache.org">Maven</a>, <a href="https://leiningen.org">Leiningen</a>, and <a href="https://boot-clj.com">Boot</a>. Gradle is primarily targeted at projects using the JVM, but has plugins for many other languages. (Now including Clojure!)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_gradle"><a class="anchor" href="#_installing_gradle"></a>Installing Gradle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://docs.gradle.org/current/userguide/installation.html">Gradle&#8217;s installation documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_initializing_a_project"><a class="anchor" href="#_initializing_a_project"></a>Initializing a project</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir my-project
+$ cd my-project
+$ gradle init</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>From here on out you&#8217;ll use <code>./gradlew</code> instead of <code>gradle</code> in your commands. <code>gradlew</code> is the <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Gradle Wrapper</a> which allows you to set a per-project Gradle version. This ensures all developers use the same Gradle version for the project, instead of whatever happens to be on their <code>PATH</code>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Also see <a href="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Gradle&#8217;s Learning the Basics</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_the_plugin"><a class="anchor" href="#_adding_the_plugin"></a>Adding the plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To include plugins from <a href="https://plugins.gradle.org/">Gradle&#8217;s Plugin Portal</a> you&#8217;ll use a <code>plugins {}</code> block. This should be at the top of your <code>build.gradle</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">plugins {
+  id 'dev.clojurephant.clojure' version '0.7.0-alpha.1'
+  // any additional plugins declared here
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also see <a href="https://docs.gradle.org/current/userguide/plugins.html">Gradle&#8217;s Using Plugins</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_project_information"><a class="anchor" href="#_configuring_project_information"></a>Configuring project information</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">group = 'my.example' // the group ID your artifacts should be published under
+version = '0.1.0-SNAPSHOT' // the version your artifacts should be published under</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_define_dependencies"><a class="anchor" href="#_define_dependencies"></a>Define dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://docs.gradle.org/current/userguide/core_dependency_management.html">Gradle&#8217;s Dependency Management docs</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_repositories"><a class="anchor" href="#_repositories"></a>Repositories</h3>
+<div class="paragraph">
+<p>No repositories are specified by default, so you must list any repositories you want to search for your dependencies.</p>
+</div>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> clojurephant currently requires Clojars be included in your repository list.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">repositories {
+  maven {
+    name = 'Clojars' // name can be ommitted, but is helpful in troubleshooting
+    url = 'https://repo.clojars.org/'
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also see <a href="https://docs.gradle.org/current/userguide/declaring_repositories.html">Gradle&#8217;s Declaring Repositories</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unless you have a reason to do otherwise, use Gradle&#8217;s shorthand syntax <code>&lt;configuration&gt; '&lt;group&gt;:&lt;artifact&gt;:&lt;version&gt;'</code> (e.g. <code>compile 'org.clojure:clojure:1.9.0'</code>) to specify dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Dependencies are put in different configurations (somewhat similar to Maven scopes). For Clojure&#8217;s purposes, the three main ones to be aware of are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>implementation</code> - dependencies of your main application code</p>
+</li>
+<li>
+<p><code>testImplementation</code> - dependencies of your test code</p>
+</li>
+<li>
+<p><code>devImplementation</code> - dependencies used only in the REPL</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">dependencies {
+  implementation 'org.clojure:clojure:1.11.1'
+
+  // due to how clojure.test is executed, a JUnit test engine (Jovial) is needed
+  testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
+
+  // due to the way Gradle's REPL is started, if you need tools.namespace, you must be on 0.3+
+  devImplementation 'org.clojure:tools.namespace:1.3.0'
+}
+
+// due to how clojure.test is executed, the JUnit platform is needed
+tasks.withType(Test) {
+  useJUnitPlatform()
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also see <a href="https://docs.gradle.org/current/userguide/declaring_dependencies.html">Gradle&#8217;s Declaring Dependencies</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_putting_it_all_together"><a class="anchor" href="#_putting_it_all_together"></a>Putting it all together</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Full <code>build.gradle</code> example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">plugins {
+  id 'dev.clojurephant.clojure' version '0.7.0-alpha.1'
+}
+
+group = 'my.example'
+version = '0.1.0-SNAPSHOT'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation 'org.clojure:clojure:1.11.1'
+
+  testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
+
+  devImplementation 'org.clojure:tools.namespace:1.3.0'
+}
+
+tasks.withType(Test) {
+  useJUnitPlatform()
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

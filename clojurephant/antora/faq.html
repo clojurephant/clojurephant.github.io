@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Frequently Asked Questions :: Clojurephant</title>
+    <link rel="canonical" href="https://clojurephant.dev/clojurephant/antora/faq.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://clojurephant.dev">Clojurephant</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" >
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="index.html">clojurephant</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="clojurephant" data-version="antora">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">clojurephant</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="new-gradle.html">New Gradle Users</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="new-clojure.html">New Clojure Users</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-lein.html">Migrating a build from Leiningen</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-boot.html">Migrating a build from Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="migrate-deps.html">Migrating a build from deps.edn</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="faq.html">Frequently Asked Questions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">clojurephant</span>
+    <span class="version">antora</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">clojurephant</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">antora</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">clojurephant</a></li>
+    <li><a href="faq.html">Frequently Asked Questions</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/clojurephant/clojurephant/edit/antora/docs/modules/ROOT/pages/faq.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Frequently Asked Questions</h1>
+<div class="sect1">
+<h2 id="_how_do_i_get_dependencies_from_clojars"><a class="anchor" href="#_how_do_i_get_dependencies_from_clojars"></a>How do I get dependencies from Clojars?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get dependencies from anywhere you need to list it in your project&#8217;s repositories block.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">// plugins, etc.
+
+repositories {
+  maven {
+    name = 'Clojars'
+    url = 'https://repo.clojars.org/'
+  }
+}
+
+// dependencies, etc.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_publish_to_clojars"><a class="anchor" href="#_how_do_i_publish_to_clojars"></a>How do I publish to Clojars?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You&#8217;ll want to set your Clojars credentials in environment variables (in this example, <code>CLOJARS_USER</code> and <code>CLOJARS_PASSWORD</code>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">plugins {
+  id 'maven-publish'
+}
+
+// other stuff
+
+publishing {
+  publications {
+    main(MavenPublication) {
+      from components.java
+    }
+  }
+  repositories {
+    maven {
+      name = 'clojars'
+      url = 'https://repo.clojars.org'
+      credentials {
+        username = System.env['CLOJARS_USER']
+        password = System.env['CLOJARS_PASSWORD']
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then run the <code>publish</code> task.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_create_an_uberjar"><a class="anchor" href="#_how_do_i_create_an_uberjar"></a>How do I create an uberjar?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the Gradle <a href="http://imperceptiblethoughts.com/shadow/">Shadow plugin</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h3>
+<div class="paragraph">
+<p>To create an executable uberjar:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">plugins {
+  id 'dev.clojurephant.clojure' version '&lt;version&gt;'
+  // this tells Gradle you're generating an application with a main class
+  id 'application'
+  // Pulls in the shadow plugin which produces the uberjar
+  id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+mainClassName = 'whatever_your.main.ns.class.is'
+
+// normal repositories and deps blocks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensure your main namespace has <code>(:gen-class)</code> in the <code>ns</code> declaration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-clojure hljs" data-lang="clojure">(ns sample.core
+  (:require [clojure.string :as string]
+            [java-time :as time])
+  (:gen-class))
+
+(defn -main [&amp; args]
+  (println (str (time/local-date))))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>./gradlew shadowJar</code> will produce the uberjar (look in <code>build/libs</code>)</p>
+</li>
+<li>
+<p><code>./gradlew runShadow</code> will run the main class of your uberjar</p>
+</li>
+<li>
+<p><code>./gradlew distShadowZip</code> or <code>./gradlew distShadowTar</code> will produce a distribution with OS-specific start scripts to run your uberjar. (look in <code>build/distributions</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_more_information"><a class="anchor" href="#_more_information"></a>More information</h3>
+<div class="paragraph">
+<p>Read the <a href="http://imperceptiblethoughts.com/shadow/">Shadow Plugin User Guide</a>. for full details on their other features.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_use_cider"><a class="anchor" href="#_how_do_i_use_cider"></a>How do I use CIDER?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://cider.readthedocs.io/en/latest/">CIDER</a> is a Clojure development environment for Emacs.</p>
+</div>
+<div class="paragraph">
+<p>Right now you need to manually add the dependency and specify the handler/middleware.</p>
+</div>
+<div class="paragraph">
+<p>Either apply to all of your projects via an init script:</p>
+</div>
+<div class="listingblock">
+<div class="title">~/.gradle/init.d/cider.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">allprojects {
+  plugins.withId('dev.clojurephant.clojure') {
+    dependencies {
+      devImplementation 'cider:cider-nrepl:0.25.6'
+    }
+
+    clojureRepl {
+      handler = 'cider.nrepl/cider-nrepl-handler'
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or add it manually to your project:</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">dependencies {
+  devImplementation 'cider:cider-nrepl:0.25.16'
+}
+
+clojureRepl {
+  handler = 'cider.nrepl/cider-nrepl-handler'
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally, omit the handler config and provide it on the CLI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>./gradlew clojureRepl --handler=cider.nrepl/cider-nrepl-handler</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once your REPL starts, use <code>cider-connect</code> within Emacs to connect to the port listed in your Gradle output.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_build_clojure_code_that_depends_on_java_code"><a class="anchor" href="#_how_do_i_build_clojure_code_that_depends_on_java_code"></a>How do I build Clojure code that depends on Java code?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can compile Clojure code that depends on Java out of the box. Just put your
+Java code in the same source set as the Clojure code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;project&gt;/
+  src/
+    main/
+      java/
+        sample_java/
+          Sample.java
+      clojure/
+        sample_clojure/
+          core.clj</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_build_java_code_that_depends_on_clojure_code"><a class="anchor" href="#_how_do_i_build_java_code_that_depends_on_clojure_code"></a>How do I build Java code that depends on Clojure code?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This requires introducing another source set for the Clojure code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;project&gt;/
+  src/
+    main/
+      java/
+        sample_java/
+          Sample.java
+    pre/
+      clojure/
+        sample_clojure/
+          core.clj</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">// plugins, etc...
+
+sourceSets {
+  pre
+  main.compileClasspath += pre.output
+}
+
+configurations {
+  preImplementation.extendsFrom implementation
+}
+
+// dependencies, etc...</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+you could be more thorough in your configuration to get all of the
+configurations to line up consistently, but this covers the main use case.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
