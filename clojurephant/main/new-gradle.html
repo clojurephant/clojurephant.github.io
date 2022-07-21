@@ -132,12 +132,12 @@ $ cd my-project
 $ gradle init</pre>
 </div>
 </div>
-<div class="quoteblock">
-<blockquote>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>From here on out you&#8217;ll use <code>./gradlew</code> instead of <code>gradle</code> in your commands. <code>gradlew</code> is the <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Gradle Wrapper</a> which allows you to set a per-project Gradle version. This ensures all developers use the same Gradle version for the project, instead of whatever happens to be on their <code>PATH</code>.</p>
 </div>
-</blockquote>
+</div>
 </div>
 <div class="paragraph">
 <p>Also see <a href="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html">Gradle&#8217;s Learning the Basics</a>.</p>
@@ -185,8 +185,17 @@ version = '0.1.0-SNAPSHOT' // the version your artifacts should be published und
 <div class="paragraph">
 <p>No repositories are specified by default, so you must list any repositories you want to search for your dependencies.</p>
 </div>
-<div class="paragraph">
-<p><strong>IMPORTANT:</strong> clojurephant currently requires Clojars be included in your repository list.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+clojurephant currently requires Clojars be included in your repository list.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
