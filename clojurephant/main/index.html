@@ -140,12 +140,28 @@
 <div class="paragraph">
 <p>clojurephant uses the common Gradle pattern of providing <em>capability</em> plugins and <em>convention</em> plugins. Capability plugins provide the basic machinery for using the language, but leaves it to you to configure. Convention plugins provide configuration on top of the capabilities to support common use cases.</p>
 </div>
-<div class="paragraph">
-<p>| Convention                       | Capability                            |
-| -------------------------------- | ------------------------------------- |
-| <code>dev.clojurephant.clojure</code>       | <code>dev.clojurephant.clojure-base</code>       |
-| <code>dev.clojurephant.clojurescript</code> | <code>dev.clojurephant.clojurescript-base</code> |</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Convention</th>
+<th class="tableblock halign-left valign-top">Capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dev.clojurephant.clojure</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dev.clojurephant.clojure-base</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dev.clojurephant.clojurescript</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dev.clojurephant.clojurescript-base</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="_dev_clojurephant_clojure_base"><a class="anchor" href="#_dev_clojurephant_clojure_base"></a>dev.clojurephant.clojure-base</h3>
 <div class="ulist">
