@@ -3,5 +3,10 @@
     "@antora/cli": "^3.0.3",
     "@antora/lunr-extension": "^1.0.0-alpha.8",
     "@antora/site-generator": "^3.0.3"
+  },
+  "overrides": {
+    "vinyl-fs": {
+      "glob-stream": "~7.0"
+    }
   }
 }
