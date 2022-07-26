@@ -95,6 +95,102 @@
 </aside>
 <article class="doc">
 <h1 class="page">User Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojurephant (<a href="https://github.com/clojurephant/clojurephant">GitHub Repo</a>) is a Gradle plugin providing support for Clojure and ClojureScript projects.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+clojurephant should not be considered stable before v1.0. Until then, minor versions will often contain breaking changes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rationale"><a class="anchor" href="#_rationale"></a>Rationale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gradle is a popular build tool in the JVM ecosysytem with a rich plugin ecosystem and support for polyglot projects.</p>
+</div>
+<div class="paragraph">
+<p>In particular, if you have a need to interop with Java code (maybe even other JVM languages), Gradle provides a good base of support.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_features"><a class="anchor" href="#_features"></a>Features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_gradle"><a class="anchor" href="#_gradle"></a>Gradle</h3>
+<div class="paragraph">
+<p>Features provided by Gradle (or its ecosystem) that are useful for Clojure programmers.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Packaging into ZIPs, JARs, or Uberjars (via the third-party <a href="http://imperceptiblethoughts.com/shadow/">Shadow plugin</a>)</p>
+</li>
+<li>
+<p>Multi-project builds</p>
+</li>
+<li>
+<p>Publishing to Maven repositories (such as Clojars or Maven Central)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clojureclojurescript"><a class="anchor" href="#_clojureclojurescript"></a>Clojure/ClojureScript</h3>
+<div class="paragraph">
+<p>Unique features provided by Clojurephant.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Running clojure.test tests with Gradle&#8217;s out-of-box <code>Test</code> task (via the <a href="https://github.com/ajoberstar/jovial">jovial</a> Junit Platform Engine)</p>
+</li>
+<li>
+<p>Clojure AOT compilation</p>
+</li>
+<li>
+<p>ClojureScript compilation (supporting multiple builds)</p>
+</li>
+<li>
+<p>Running an nREPL server (supporting custom middleware or handlers)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+ClojureScript features, in particular, are not fully settled and may change before 1.0.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_notes"><a class="anchor" href="#_release_notes"></a>Release Notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the <a href="https://github.com/clojurephant/clojurephant/releases">GitHub releases</a> for the changelog of each version.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_quick_start"><a class="anchor" href="#_quick_start"></a>Quick Start</h2>
 <div class="sectionbody">
@@ -115,7 +211,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>If the documentation doesn&#8217;t answer your questions, please visit the <a href="https://github.com/clojurephant/clojurephant/discussions">Clojurephant Discussions</a>.</p>
+<p>If the samples or our documentation doesn&#8217;t answer your questions, please ask in <a href="https://github.com/clojurephant/clojurephant/discussions">Clojurephant Discussions</a>.</p>
 </div>
 </div>
 </div>
