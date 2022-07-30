@@ -302,34 +302,29 @@ Java code in the same source set as the Clojure code:</p>
 <h2 id="_how_do_i_build_java_code_that_depends_on_clojure_code"><a class="anchor" href="#_how_do_i_build_java_code_that_depends_on_clojure_code"></a>How do I build Java code that depends on Clojure code?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This requires introducing another source set for the Clojure code.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>&lt;project&gt;/
-  src/
-    main/
-      java/
-        sample_java/
-          Sample.java
-    pre/
-      clojure/
-        sample_clojure/
-          core.clj</pre>
-</div>
+<p>This requires changing the classpaths for the Clojure build and the Java compile.</p>
 </div>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">// plugins, etc...
 
-sourceSets {
-  pre
-  main.compileClasspath += pre.output
+clojure.builds {
+  main {
+    // reset Clojure classpath to only include dependencies
+    classpath.from = sourceSets.main.compileClasspath
+
+    // or if you also need the sources on the classpath
+    // classpath.from = sourceSets.main.compileClasspath + tasks.named(sourceSets.main.processResourcesTaskName)
+
+    // makes sure you AOT at least the namespace that produces the class(es) Java uses
+    aotAll()
+  }
 }
 
-configurations {
-  preImplementation.extendsFrom implementation
+tasks.named('compileJava') {
+  // add clojure's compiled output onto the Java compiler output
+  classpath += files(sourceSets.main.clojure.classesDirectory)
 }
 
 // dependencies, etc...</code></pre>
@@ -342,8 +337,7 @@ configurations {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-you could be more thorough in your configuration to get all of the
-configurations to line up consistently, but this covers the main use case.
+Similar approaches should apply for other JVM languages (e.g. Groovy or Kotlin).
 </td>
 </tr>
 </table>
