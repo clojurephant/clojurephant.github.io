@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dev.clojurephant.clojure :: Clojurephant</title>
+    <link rel="canonical" href="https://clojurephant.dev/clojurephant/main/reference/plugins/clojure.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://clojurephant.dev">Clojurephant</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" >
+        </div>
+      </div>
+
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="../../index.html">clojurephant</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Repositories</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/clojurephant/clojurephant">clojurephant</a>
+            <a class="navbar-item" href="https://github.com/clojurephant/sample-clojurephant-clj-lib">
+              sample-clojurephant-clj-lib
+            </a>
+            <a class="navbar-item" href="https://github.com/clojurephant/sample-clojurephant-clj-app">
+              sample-clojurephant-clj-app
+            </a>
+            <a class="navbar-item" href="https://github.com/clojurephant/sample-clojurephant-cljs-app">
+              sample-clojurephant-cljs-app
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="clojurephant" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">clojurephant</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/index.html">Tutorials (🚧)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/new-gradle.html">New Gradle Users</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/new-clojure.html">New Clojure Users (🚧)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../howto/index.html">How-To Guides (🚧)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howto/faq.html">Frequently Asked Questions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howto/migrate-lein.html">Migrating from Leiningen (🚧)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howto/migrate-boot.html">Migrating from Boot (🚧)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howto/migrate-deps.html">Migrating from deps.edn (🚧)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugins</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="clojure.html">clojure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="clojurescript.html">clojurescript</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="clojure-base.html">clojure-base</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="clojurescript-base.html">clojurescript-base</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dsl/clojureextension.html">Clojure DSL</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dsl/clojurebuild.html">Build</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dsl/clojurecompileoptions.html">CompileOptions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../dsl/clojurescriptextension.html">ClojureScript DSL</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dsl/clojurescriptbuild.html">Build</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../dsl/clojurescriptcompileoptions.html">CompileOptions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tasks</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tasks/clojurecheck.html">ClojureCheck</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tasks/clojurecompile.html">ClojureCompile</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tasks/clojurenrepl.html">ClojureNRepl</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tasks/clojurescriptcompile.html">ClojureScriptCompile</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../explanation/index.html">Explanation (🚧)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">clojurephant</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">clojurephant</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">clojurephant</a></li>
+    <li><a href="../index.html">Reference</a></li>
+    <li>Plugins</li>
+    <li><a href="clojure.html">clojure</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/clojurephant/clojurephant/edit/main/docs/modules/reference/pages/plugins/clojure.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">dev.clojurephant.clojure</h1>
+<div class="sect1">
+<h2 id="_base_clojure_support"><a class="anchor" href="#_base_clojure_support"></a>Base Clojure Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Applies the <a href="clojure-base.html" class="xref page">dev.clojurephant.clojure-base</a> plugin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_java_support"><a class="anchor" href="#_java_support"></a>Java Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Applies the Gradle built-in <code>java</code> plugin to get convention-based support for the JVM ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>The high-level features of the <code>java</code> plugin are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creating a <code>main</code> source set for your production code</p>
+</li>
+<li>
+<p>Creating a <code>jar</code> task that packages the <code>main</code> source set&#8217;s output</p>
+</li>
+<li>
+<p>Creating a <code>test</code> source set for use with JUnit testing</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>test</code> source set depends on the <code>main</code> source set&#8217;s output (i.e. Java classes)</p>
+</li>
+<li>
+<p>Creates a <code>test</code> task to execute the tests</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_project_layout"><a class="anchor" href="#_project_layout"></a>Project Layout</h3>
+<div class="paragraph">
+<p>This is the default project layout.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>settings.gradle
+build.gradle
+src/
+  main/
+    java/
+    resources/
+  test/
+    java/
+    resources/</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_full_project_layout"><a class="anchor" href="#_full_project_layout"></a>Full Project Layout</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>settings.gradle
+build.gradle
+src/
+  main/
+    clojure/
+    java/
+    resources/
+  test/
+    clojure/
+    java/
+    resources/
+  dev/
+    clojure/
+    java/
+    resources/</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_main_source"><a class="anchor" href="#_main_source"></a>Main Source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default the <code>main</code> build runs with <code>build.checkAll()</code>. This will let you know if any of your code is invalid and would fail a compile (without producing AOT classes).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_source"><a class="anchor" href="#_test_source"></a>Test Source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default the <code>test</code> build runs with <code>build.aotAll()</code> since the only reliable way to run Clojure tests via Gradle&#8217;s native <code>Test</code> task is to have them pre-compiled into class files.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Running clojure.test tests</div>
+<div class="paragraph">
+<p>Clojurephant doesn&#8217;t provide support out-of-the-box to run <code>clojure.test</code> tests, but you can very easily enable it by using <a href="https://github.com/ajoberstar/jovial">jovial</a>, which is a JUnit Platform engine. This approach means that your Clojure tests can make use of Gradle&#8217;s reporting and filtering features.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">dependencies {
+  testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
+}
+
+tasks.withType(Test) {
+  useJUnitPlatform()
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_development_source"><a class="anchor" href="#_development_source"></a>Development Source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Its conventional in Clojure/ClojureScript projects to have a set of development-only source code, typically for use in a REPL environment.</p>
+</div>
+<div class="paragraph">
+<p>The convention plugins create a new SourceSet named <code>dev</code> to house this code. The <code>dev</code> source sets&#8217;s dependency "buckets" extend from the <code>test</code> and <code>main</code> ones, avoiding the need to repeat declaring dependencies.</p>
+</div>
+<div class="sect2">
+<h3 id="_compile_classpath"><a class="anchor" href="#_compile_classpath"></a>Compile Classpath</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojure/ClojureScript source from the <code>test</code> source set</p>
+</li>
+<li>
+<p>Clojure/ClojureScript source from the <code>main</code> source set</p>
+</li>
+<li>
+<p>Compiled Java classes from the <code>main</code> source set</p>
+</li>
+<li>
+<p>the source set&#8217;s <code>compileClasspath</code> configuration dependencies (which include the deps from <code>test</code> and <code>main</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_runtime_repl_classpath"><a class="anchor" href="#_runtime_repl_classpath"></a>Runtime (REPL) Classpath</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojure/ClojureScript source from the <code>dev</code> source set</p>
+</li>
+<li>
+<p>Clojure/ClojureScript source from the <code>test</code> source set</p>
+</li>
+<li>
+<p>Clojure/ClojureScript source from the <code>main</code> source set</p>
+</li>
+<li>
+<p>Compiled Java classes from the <code>main</code> source set</p>
+</li>
+<li>
+<p>the source set&#8217;s <code>compileClasspath</code> configuration dependencies (which include the deps from <code>test</code> and <code>main</code>)</p>
+</li>
+<li>
+<p><code>sources</code> and <code>javadoc</code> JARs of all dependencies (where available)&#8201;&#8212;&#8201;this can be used by editor&#8217;s like CIDER to help with navigate to source or documentation</p>
+</li>
+<li>
+<p><code>nrepl</code> configuration dependencies (the nREPL server and any "jacked-in" dependencies)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repl_task"><a class="anchor" href="#_repl_task"></a>REPL Task</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creates a <a href="../tasks/clojurenrepl.html" class="xref page">ClojureNRepl</a> task (named <code>clojureRepl</code>) to provide an nREPL server using the <code>dev</code> runtime classpath.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>
