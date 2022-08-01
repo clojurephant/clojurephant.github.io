@@ -90,17 +90,20 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">How-To Guides (🚧)</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="editors.html">Editor Integrations</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="faq.html">Frequently Asked Questions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="migrate-lein.html">Migrating from Leiningen (🚧)</a>
+    <a class="nav-link" href="migrate-lein.html">Migrate from Leiningen (🚧)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="migrate-boot.html">Migrating from Boot (🚧)</a>
+    <a class="nav-link" href="migrate-boot.html">Migrate from Boot (🚧)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="migrate-deps.html">Migrating from deps.edn (🚧)</a>
+    <a class="nav-link" href="migrate-deps.html">Migrate from deps.edn (🚧)</a>
   </li>
 </ul>
   </li>
@@ -346,62 +349,6 @@ mainClassName = 'whatever_your.main.ns.class.is'
 <div class="paragraph">
 <p>Read the <a href="http://imperceptiblethoughts.com/shadow/">Shadow Plugin User Guide</a>. for full details on their other features.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_how_do_i_use_cider"><a class="anchor" href="#_how_do_i_use_cider"></a>How do I use CIDER?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://cider.readthedocs.io/en/latest/">CIDER</a> is a Clojure development environment for Emacs.</p>
-</div>
-<div class="paragraph">
-<p>Right now you need to manually add the dependency and specify the handler/middleware.</p>
-</div>
-<div class="paragraph">
-<p>Either apply to all of your projects via an init script:</p>
-</div>
-<div class="listingblock">
-<div class="title">~/.gradle/init.d/cider.gradle</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">allprojects {
-  plugins.withId('dev.clojurephant.clojure') {
-    dependencies {
-      devImplementation 'cider:cider-nrepl:0.28.5'
-    }
-
-    clojureRepl {
-      handler = 'cider.nrepl/cider-nrepl-handler'
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or add it manually to your project:</p>
-</div>
-<div class="listingblock">
-<div class="title">build.gradle</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">dependencies {
-  devImplementation 'cider:cider-nrepl:0.28.5'
-}
-
-clojureRepl {
-  handler = 'cider.nrepl/cider-nrepl-handler'
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Optionally, omit the handler config and provide it on the CLI:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>./gradlew clojureRepl --handler=cider.nrepl/cider-nrepl-handler</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Once your REPL starts, use <code>cider-connect</code> within Emacs to connect to the port listed in your Gradle output.</p>
 </div>
 </div>
 </div>
