@@ -1,11 +1,14 @@
 name: CD
 on:
   push:
+permissions:
+  pages: write
+  id-token: write
 concurrency:
   group: cd-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  cd:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,12 +21,18 @@ jobs:
         run: npm ci
       - name: Antora build
         run: npx antora ./antora-playbook.yml
-      - name: Disable Jekyll
-        run: touch .nojekyll
-      - name: Publish to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/site
-          cname: clojurephant.dev
+          path: build/site
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
