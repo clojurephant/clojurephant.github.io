@@ -1,4 +1,6 @@
 {
+  "name": "clojurephant.github.io",
+  "private": true,
   "devDependencies": {
     "@antora/cli": "^3.0.3",
     "@antora/lunr-extension": "^1.0.0-alpha.8",
@@ -8,5 +10,9 @@
     "vinyl-fs": {
       "glob-stream": "~7.0"
     }
+  },
+  "scripts": {
+    "build": "antora --fetch ./antora-playbook.yml",
+    "build:local": "antora --fetch ./antora-local-playbook.yml"
   }
 }
