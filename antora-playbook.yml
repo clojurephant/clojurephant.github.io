@@ -6,10 +6,17 @@ content:
   sources:
     - url: https://github.com/clojurephant/clojurephant.git
       branches: [main]
+      # First include all tags
+      # Then exclude all pre-release tags
+      # Then exclude pre-Antora tags
+      # Then include current pre-release versions
       tags: ["*", "!*-*", "!0.{0..6}.*", "0.7.1-*", "0.8.0-*"]
       start_path: docs/
     - url: https://github.com/clojurephant/clojurephant-tooling.git
       branches: [main]
+      # First include all tags
+      # Then exclude all pre-release tags
+      # Then include current pre-release tags
       tags: ["*", "!*-*", "0.1.0-*"]
       start_path: docs/
 ui:
