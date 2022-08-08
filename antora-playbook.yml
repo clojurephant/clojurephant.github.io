@@ -6,9 +6,11 @@ content:
   sources:
     - url: https://github.com/clojurephant/clojurephant.git
       branches: [main]
+      tags: ["*", "!*-*", "!0.{0..6}.*", "0.7.1-*", "0.8.0-*"]
       start_path: docs/
     - url: https://github.com/clojurephant/clojurephant-tooling.git
       branches: [main]
+      tags: ["*", "!*-*", "0.1.0-*"]
       start_path: docs/
 ui:
   bundle:
