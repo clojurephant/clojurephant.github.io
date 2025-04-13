@@ -3,3 +3,6 @@ node_modules/
 
 # Antora
 build/
+
+# IntelliJ
+.idea/
